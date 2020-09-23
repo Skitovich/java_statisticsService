@@ -3,7 +3,7 @@ package ru.netology.stats;
 public class StatsService {
 
 
-    public long calculateSum(long[] sales) {
+    public float calculateSum(long[] sales) {
         long sumSales = 0;
 
         for (long sale : sales) {
@@ -13,13 +13,8 @@ public class StatsService {
 
     }
 
-    public long averageSumSales(long[] sales) {
-        long sumSales = 0;
-
-        for (long sale : sales) {
-            sumSales += sale;
-        }
-        long avgSumSales = sumSales / sales.length;
+    public double averageSumSales(long[] sales) {
+        double avgSumSales = calculateSum(sales) / sales.length;
         return avgSumSales;
     }
 

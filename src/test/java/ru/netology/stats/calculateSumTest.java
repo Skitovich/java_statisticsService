@@ -11,9 +11,23 @@ class CalculateSumTest {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expected = 180;
-        long actual = service.calculateSum(sales);
+        float actual = service.calculateSum(sales);
         assertEquals(expected, actual);}
 }
+
+class AverageSumSales {
+
+    @Test
+    void AverageSumSales() {
+        StatsService service = new StatsService();
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        double expected = 15;
+        double actual = service.averageSumSales(sales);
+       assertEquals(expected, actual);
+        }
+
+}
+
 
 class numMonthMaxSalesTest {
 
@@ -58,14 +72,3 @@ class sumMOnthBelowAverageTest {
     }
 }
 
-class AverageSumSales {
-
-    @Test
-    void AverageSumSales() {
-        StatsService service = new StatsService();
-        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected = 15;
-        long actual = service.averageSumSales(sales);
-        assertEquals(expected, actual);}
-
-}
