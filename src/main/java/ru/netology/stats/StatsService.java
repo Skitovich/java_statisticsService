@@ -50,13 +50,10 @@ public class StatsService {
     }
 
     public long sumMonthAboveAverage(long[] sales) {
-        long sumSales = 0;
-        int sumMonthAbove = 0;
-        for (long sale : sales) {
-            sumSales += sale;
-        }
-        long avgSumSales = sumSales / sales.length;
-        for (long sale : sales) {
+      int sumMonthAbove = 0;
+      double avgSumSales = averageSumSales(sales);
+
+      for (long sale : sales) {
             if (avgSumSales < sale) {
                 sumMonthAbove++;
             }
@@ -66,12 +63,9 @@ public class StatsService {
     }
 
     public long sumMonthBelowAverage(long[] sales) {
-        long sumSales = 0;
         int sumMonthBelow = 0;
-        for (long sale : sales) {
-            sumSales += sale;
-        }
-        long avgSumSales = sumSales / sales.length;
+        double avgSumSales = averageSumSales(sales);
+
         for (long sale : sales) {
             if (avgSumSales > sale) {
                 sumMonthBelow++;
